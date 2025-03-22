@@ -16,9 +16,6 @@ export default function Home() {
           alt="Computational Spatial Biology cover image"
           className="w-full h-full object-cover"
         />
-        <div className="absolute bottom-4 right-4">
-          <span className="text-xs text-muted-foreground bg-background/80 px-2 py-1">Cover Photo</span>
-        </div>
       </div>
 
       <div className="max-w-4xl mx-auto px-4 py-8">
