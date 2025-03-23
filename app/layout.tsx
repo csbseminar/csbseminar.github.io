@@ -6,23 +6,27 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Computational Spatial Biology Seminar",
   description: "Webinar series on computational approaches in spatial biology",
-    generator: 'v0.dev'
+  generator: 'v0.dev',
+  icons: {
+    icon: '/favicon.png',
+    apple: '/favicon.png',
+  }
 }
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="min-h-screen">
+      <head />
+      <body>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
-          enableSystem={false}
-          storageKey="webinar-theme"
-          forcedTheme={undefined}
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
         >
           {children}
         </ThemeProvider>
