@@ -11,52 +11,75 @@ type Talk = {
   date: string
   time: string
   isPast: boolean
+  paperUrl?: string
   youtubeUrl?: string
   slidesUrl?: string
 }
 
-// Combined list of talks
 const allTalks: Talk[] = [
   {
     id: "1",
-    title: "Spatial Transcriptomics in Cancer Research",
-    speaker: "Dr. Jane Smith",
-    affiliation: "University of Science",
-    date: "April 15, 2023",
-    time: "3:00 PM - 4:30 PM EST",
+    title: "Tissue reassembly with generative AI",
+    speaker: "Yist YU",
+    affiliation: "EPFL",
+    date: "April 9th, 2025",
+    time: "11AM ET/4PM CET",
     isPast: false,
+    paperUrl: "https://www.biorxiv.org/content/10.1101/2025.02.13.638045v1",
   },
   {
     id: "2",
-    title: "Computational Methods for Spatial Proteomics",
-    speaker: "Dr. John Doe",
-    affiliation: "Institute of Computational Biology",
-    date: "May 2, 2023",
-    time: "2:00 PM - 3:30 PM EST",
+    title: "Learning single-cell spatial context through integrated spatial multiomics with CORAL",
+    speaker: "Siyu He",
+    affiliation: "Stanford",
+    date: "April 30th, 2025",
+    time: "12PM ET/5PM CET",
     isPast: false,
+    paperUrl: "https://www.biorxiv.org/content/10.1101/2025.02.01.636038v1",
   },
   {
     id: "3",
-    title: "Integrating Spatial and Single-cell Data",
-    speaker: "Dr. Sarah Johnson",
-    affiliation: "Genomics Institute",
-    date: "March 10, 2023",
-    time: "3:00 PM - 4:30 PM EST",
-    isPast: true,
-    youtubeUrl: "https://youtube.com/watch?v=example1",
-    slidesUrl: "https://example.com/slides1",
+    title: "AI-powered virtual tissues from spatial proteomics for clinical diagnostics and biomedical discovery",
+    speaker: "Johann Wenckstern",
+    affiliation: "EPFL",
+    date: "May 7th, 2025",
+    time: "12PM ET/5PM CET",
+    isPast: false,
+    paperUrl: "https://arxiv.org/abs/2501.06039",
   },
   {
     id: "4",
-    title: "Machine Learning for Spatial Biology",
-    speaker: "Dr. Michael Brown",
-    affiliation: "AI Research Center",
-    date: "February 15, 2023",
-    time: "2:00 PM - 3:30 PM EST",
-    isPast: true,
-    youtubeUrl: "https://youtube.com/watch?v=example2",
-    slidesUrl: "https://example.com/slides2",
+    title: "AI-driven 3D spatial transcriptomics",
+    speaker: "Cristina Almagro-Pérez",
+    affiliation: "MIT",
+    date: "May 14th, 2025",
+    time: "TBD",
+    isPast: false,
+    paperUrl: "https://arxiv.org/abs/2502.17761",
   },
+  // {
+  //   id: "3",
+  //   title: "Integrating Spatial and Single-cell Data",
+  //   speaker: "Dr. Sarah Johnson",
+  //   affiliation: "Genomics Institute",
+  //   date: "March 10, 2023",
+  //   time: "3:00 PM - 4:30 PM EST",
+  //   isPast: true,
+  //   youtubeUrl: "https://youtube.com/watch?v=example1",
+  //   slidesUrl: "https://example.com/slides1",
+  //   paperUrl: "https://example.com/paper3",
+  // },
+  // {
+  //   id: "4",
+  //   title: "Machine Learning for Spatial Biology",
+  //   speaker: "Dr. Michael Brown",
+  //   affiliation: "AI Research Center",
+  //   date: "February 15, 2023",
+  //   time: "2:00 PM - 3:30 PM EST",
+  //   isPast: true,
+  //   youtubeUrl: "https://youtube.com/watch?v=example2",
+  //   slidesUrl: "https://example.com/slides2",
+  // },
 ]
 
 export function TalksList() {
@@ -90,7 +113,7 @@ export function TalksList() {
               </div>
             </div>
 
-            {talk.isPast && (talk.youtubeUrl || talk.slidesUrl) && (
+            {(talk.youtubeUrl || talk.slidesUrl || talk.paperUrl) && (
               <div className="flex gap-2 mt-4">
                 {talk.youtubeUrl && (
                   <Button variant="outline" size="sm" className="rounded-none" asChild>
@@ -108,6 +131,14 @@ export function TalksList() {
                     </a>
                   </Button>
                 )}
+                {talk.paperUrl && (
+                  <Button variant="outline" size="sm" className="rounded-none" asChild>
+                    <a href={talk.paperUrl} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Paper
+                    </a>
+                  </Button>
+                )}
               </div>
             )}
           </div>
@@ -117,4 +148,3 @@ export function TalksList() {
     </div>
   )
 }
-

@@ -11,7 +11,7 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       {/* Top bar */}
       <div className="w-full h-2 bg-background"></div>
-      
+
       {/* Cover photo with increased height */}
       <div className="w-full h-72 relative overflow-hidden">
         <img
@@ -31,8 +31,18 @@ export default function Home() {
           <section>
             <h2 className="text-2xl font-semibold mb-4">About the Seminar</h2>
             <p className="text-muted-foreground">
-              [Your description will go here. Describe what the seminar series is about, who should attend, and any
-              other relevant information about the computational spatial biology focus.]
+              Spatial biology is an emerging field that integrates spatial information with molecular data to understand how cells organize and function within tissues.
+              In particular, spatial omics maps molecular profiles onto tissue architecture, allowing the study of cellular interactions in their native context and providing new insights into development, disease progression, and precision medicine.
+              These advances go hand in hand with the development of AI tools to analyze this data, paving the way for modeling virtual tissues.
+              <br /><br />
+              In this reading group, we invite researchers working at the intersection of AI and spatial biology to present their papers.
+              Join us to explore cutting-edge approaches from the community and discover new techniques for your own research!
+              <br />
+              This meeting is hosted by
+              <a href="https://www.justinhong.me/" className="text-blue-500 hover:underline"> Justin Hong
+              </a> and <a href="https://www.linkedin.com/in/nathan-levy-wis/" className="text-blue-500 hover:underline">
+                Nathan Levy
+              </a>, and we gather on Zoom every few weeks on Wednesdays.
             </p>
           </section>
 
