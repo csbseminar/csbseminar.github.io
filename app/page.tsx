@@ -54,7 +54,7 @@ export default function Home() {
               <p className="text-muted-foreground mb-4">Connect with us via Zoom</p>
               <div className="space-y-4">
                 <Button className="w-full" asChild>
-                  <a href="/api/redirect?type=zoom" target="_blank" rel="noopener noreferrer">
+                  <a href="/redirect/zoom" target="_blank" rel="noopener noreferrer">
                     <Video className="mr-2 h-4 w-4" />
                     Join Zoom Webinar
                   </a>
@@ -70,7 +70,7 @@ export default function Home() {
               <p className="text-muted-foreground mb-4">Stay updated on upcoming seminars</p>
               <div className="space-y-4">
                 <Button className="w-full" asChild>
-                  <a href="/api/redirect?type=group" target="_blank" rel="noopener noreferrer">
+                  <a href="/redirect/group" target="_blank" rel="noopener noreferrer">
                     <Mail className="mr-2 h-4 w-4" />
                     Join our Google Group
                   </a>
