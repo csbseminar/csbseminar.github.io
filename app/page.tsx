@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
 import { Mail, Video } from "lucide-react"
+import { PrivacyPolicy } from "@/components/privacy-policy"
 
 export default function Home() {
   return (
@@ -95,6 +96,9 @@ export default function Home() {
 
         <footer className="py-6 text-center text-sm text-muted-foreground">
           <p>© {new Date().getFullYear()} Computational Spatial Biology Seminar Series</p>
+          <div className="mt-2">
+            <PrivacyPolicy />
+          </div>
         </footer>
       </div>
     </div>
