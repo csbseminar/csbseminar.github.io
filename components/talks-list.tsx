@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Youtube } from "lucide-react"
+import { ExternalLink, Youtube, Mail } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Separator } from "@/components/ui/separator"
 
@@ -14,6 +14,7 @@ type Talk = {
   paperUrl?: string
   youtubeUrl?: string
   slidesUrl?: string
+  recordingAvailable?: boolean
 }
 
 const allTalks: Talk[] = [
@@ -24,8 +25,9 @@ const allTalks: Talk[] = [
     affiliation: "EPFL",
     date: "April 9th, 2025",
     time: "11AM ET/5PM CET",
-    isPast: false,
+    isPast: true,
     paperUrl: "https://www.biorxiv.org/content/10.1101/2025.02.13.638045v1",
+    recordingAvailable: true,
   },
   {
     id: "2",
@@ -113,13 +115,21 @@ export function TalksList() {
               </div>
             </div>
 
-            {(talk.youtubeUrl || talk.slidesUrl || talk.paperUrl) && (
+            {(talk.youtubeUrl || talk.slidesUrl || talk.paperUrl || talk.recordingAvailable) && (
               <div className="flex gap-2 mt-4">
                 {talk.youtubeUrl && (
                   <Button variant="outline" size="sm" className="rounded-none" asChild>
                     <a href={talk.youtubeUrl} target="_blank" rel="noopener noreferrer">
                       <Youtube className="mr-2 h-4 w-4" />
                       Recording
+                    </a>
+                  </Button>
+                )}
+                {talk.recordingAvailable && !talk.youtubeUrl && (
+                  <Button variant="outline" size="sm" className="rounded-none" asChild>
+                    <a href="mailto:csbseminar2025@gmail.com" target="_blank" rel="noopener noreferrer">
+                      <Mail className="mr-2 h-4 w-4" />
+                      Recording available upon request
                     </a>
                   </Button>
                 )}
