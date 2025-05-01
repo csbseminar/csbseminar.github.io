@@ -36,8 +36,10 @@ const allTalks: Talk[] = [
     affiliation: "Stanford",
     date: "April 30th, 2025",
     time: "12PM ET/6PM CET",
-    isPast: false,
+    isPast: true,
     paperUrl: "https://www.biorxiv.org/content/10.1101/2025.02.01.636038v1",
+    youtubeUrl: "https://youtu.be/BV5soaUVUNA",
+    recordingAvailable: true,
   },
   {
     id: "3",
