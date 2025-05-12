@@ -48,8 +48,10 @@ const allTalks: Talk[] = [
     affiliation: "EPFL",
     date: "May 7th, 2025",
     time: "11AM ET/5PM CET",
-    isPast: false,
+    isPast: true,
     paperUrl: "https://arxiv.org/abs/2501.06039",
+    recordingAvailable: true,
+    youtubeUrl: "https://youtu.be/MdbLeuxeY60",
   },
   {
     id: "4",
