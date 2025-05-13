@@ -53,16 +53,6 @@ const allTalks: Talk[] = [
     recordingAvailable: true,
     youtubeUrl: "https://youtu.be/MdbLeuxeY60",
   },
-  {
-    id: "4",
-    title: "AI-driven 3D spatial transcriptomics",
-    speaker: "Cristina Almagro-Pérez",
-    affiliation: "MIT",
-    date: "May 14th, 2025",
-    time: "11AM ET/5PM CET",
-    isPast: false,
-    paperUrl: "https://arxiv.org/abs/2502.17761",
-  },
   // {
   //   id: "3",
   //   title: "Integrating Spatial and Single-cell Data",
